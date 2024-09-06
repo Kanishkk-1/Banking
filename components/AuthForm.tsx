@@ -19,9 +19,10 @@ import { z } from "zod"
 import CustomInput from './CustomInput'
 import { authformSchema } from '@/lib/utils'
 import { Loader2 } from 'lucide-react'
-import SignUp from '@/app/(auth)/sign-up/page'
+// import SignUp from '@/app/(auth)/sign-up/page'
 import { useRouter } from 'next/navigation'
-import { signIn } from '@/lib/actions/user.actions'
+import { signUp } from '@/lib/actions/user.actions'
+
 
 
 
@@ -52,12 +53,12 @@ const AuthForm = ({ type }: { type: string }) => {
             setUser(newUser) 
             }
             if(type==='sign-in'){
-                const response = await signIn({
-                    email : data.email,
-                    password : data.password,
-                })
+                // const response = await signIn({
+                //     email : data.email,
+                //     password : data.password,
+                // })
                 
-                if(response) router.push('/')
+                // if(response) router.push('/')
                 
             }
             
@@ -77,7 +78,7 @@ const AuthForm = ({ type }: { type: string }) => {
                     href="/"
                     className="flex cursor-pointer items-center gap-1"
                 >
-                    <Image src="/icons/logo.svg" width={34} height={34} />
+                    <Image src="/icons/logo.svg" width={34} height={34} alt='hh' />
                     <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">
                         Gang Bank
                     </h1>
